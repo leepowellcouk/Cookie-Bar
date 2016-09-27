@@ -8,23 +8,22 @@ class CookieBarController extends Page_Controller
 		"accept"
 	);
 
-	public function accept()
+	public function accept($request)
 	{
-		if(!$cookie = Cookie::get('cookiesAccepted'))
+		if(!$cookie = Cookie::get('CookiesAccepted'))
 		{
-			$cookie = new Cookie();	
+			$cookie = new Cookie();
+			$cookie->set('CookiesAccepted', 'true', 1000);
 		}
 
-		$cookie->set('cookiesAccepted', 'true', 1000);
-
 		if(Director::is_ajax())
-		{	
+		{
 			echo 'success';
 			return;
 		}
-		else 
+		else
 		{
-			return $this->redirect();
+			return $this->redirect($request->getVar('redirect'));
 		}
 	}
 }
