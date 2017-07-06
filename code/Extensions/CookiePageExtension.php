@@ -11,9 +11,6 @@ class CookiePageExtension extends DataExtension
 	{
 		if(SiteConfig::current_site_config()->CookieBarEnable && (!Cookie::get('CookiesAccepted') || Cookie::get('CookiesAccepted') != 'true'))
 		{
-			//include the cookiebar css
-			// Requirements::themedCSS('CookieBar', 'cookiebar');
-			//add ajax to the accept button
 			Requirements::javascript('cookie-bar/javascript/cookiebar.js');
 			return true;
 		}

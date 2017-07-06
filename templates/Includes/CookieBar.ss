@@ -1,27 +1,10 @@
 <% if ShowCookieBar %>
 	<% with SiteConfig %>
-		<div id="cookieBar">
-			<div class="container">
-				<div class="description typography">
-					<% if CookieImage %>
-						$CookieImage.SetHeight(80)
-					<% end_if %>
-                    
-                    <p class="intro"><strong>$CookieBarTitle</strong> <a href="#" class="more">Show more</a></p>
-                    
-					<div class="content">
-					   $CookieBarContent
-					</div>
-				</div>
-				<div class="links">
-					<a id="acceptCookies" href="$Top.AcceptCookiesLink">$CookieCloseText</a>
-					<% if CookiePage %>
-						<a href="$CookiePage.Link" class="infoLink">$CookieMoreText</a>
-					<% end_if %>
-				</div>
-				<div class="clear"><!-- --></div>
-			</div>
+	<div class="cookie-bar" id="cookie-bar">
+		<div class="wrapper">
+			<p class="cookie-bar-content">$CookieBarContent<% if CookieBarPage %> - <a href="$CookieBarPage.Link" class="cookie-bar-more">$CookieBarMoreText</a><% end_if %></p>
+			<a id="cookie-bar-accept" class="cookie-bar-accept button" href="$Top.AcceptCookiesLink" rel="nofollow">$CookieBarCloseText</a>
 		</div>
+	</div>
 	<% end_with %>
 <% end_if %>
-
