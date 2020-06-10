@@ -1,8 +1,8 @@
 <?php
 
 //Decorators
-Object::add_extension('SiteConfig', 'CookieSiteConfig');
-Object::add_extension('Page_Controller', 'CookiePageExtension');
+SS_Object::add_extension('SiteConfig', 'CookieSiteConfig');
+SS_Object::add_extension('Page_Controller', 'CookiePageExtension');
 
 //cookie controller
 //add profile controller
